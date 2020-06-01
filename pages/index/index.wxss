@@ -1,0 +1,33 @@
+.p30-lf {
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.p30-lf .info {
+  display: flex;
+  height: 97rpx;
+  align-items: center;
+  border-bottom: 2rpx solid #dcdcdc;
+}
+.p30-lf .info .info-lt {
+  font-size: 30rpx;
+  color: #333333;
+}
+.p30-lf .info .info-rt {
+  margin-left: 30rpx;
+  flex: 1;
+  text-align: right;
+  font-size: 30rpx;
+  color: #999999;
+}
+.p30-lf .info .info-rt .date {
+  font-size: 30rpx;
+  color: #999999;
+}
+.p30-lf .info .w30 {
+  width: 30rpx;
+}
+.p30-lf .info .right-arrow {
+  width: 8rpx;
+  height: 16rpx;
+  margin-left: 22rpx;
+}

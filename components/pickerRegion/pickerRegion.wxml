@@ -1,0 +1,21 @@
+<view class="page" hidden="{{isShow}}" bind:tap="hideRegion">
+  <view class="picker-prompt" catch:tap="s">
+    <view class="type">
+      <view class="cancel" catch:tap="cancel">取消</view>
+      <view class="confirm" catch:tap="confirm">确定</view>
+    </view>
+    <picker-view indicator-style="height: 50rpx;" style="width: 100%; height: 300rpx;" value="{{regionValue}}" bindchange="bindChange">
+      <picker-view-column>
+        <view wx:key="index" wx:key="index"  wx:for="{{region}}" class="region">{{item.name}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:key="index" wx:key="index"  wx:for="{{region[regionValue[0]].data}}" class="region">{{item.name}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:key="index" wx:key="index"  wx:for="{{region[regionValue[0]].data[regionValue[1]].data}}" class="region">
+          {{item.name}}
+        </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>

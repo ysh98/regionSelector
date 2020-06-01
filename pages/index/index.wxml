@@ -1,0 +1,11 @@
+        <view class="p30-lf">
+        	<view class="info" bind:tap="showRegion">
+        		<view class="info-lt">城市</view>
+        		<view wx:if="{{!isRegion}}" style="flex:1" class="info-rt">请选择省市区</view>
+        		<view wx:else class="info-rt" style="flex:1">
+        			{{regionValue[0]}} {{regionValue[1]}} {{regionValue[2]}}
+        		</view>
+        		<view class="w30"></view>
+        	</view>
+        </view>
+        <picker-region isShow="{{isShow}}" regionValues="{{regionValue}}" bind:region="regionChange"></picker-region>

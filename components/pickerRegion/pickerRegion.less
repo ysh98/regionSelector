@@ -1,0 +1,50 @@
+.page{
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    .picker-prompt{
+        height: 400rpx;
+        width: 100%;
+        background: #fff;
+        position: absolute;
+        bottom: 0;
+        .type{
+            height: 100rpx;
+            display: flex;
+            justify-content: space-between;
+            .cancel{
+                color: #90c4ff;
+                height: 100rpx;
+                width: 150rpx;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .confirm{
+                color: #6562ff;
+                height: 100rpx;
+                width: 150rpx;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        
+            flex: 1;
+            .region{
+                line-height: 68rpx;
+                text-align: center;
+                text-overflow: -o-ellipsis-lastline;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                flex: 1;
+            }
+        
+    }
+}
