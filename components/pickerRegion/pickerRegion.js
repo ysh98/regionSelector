@@ -12,7 +12,7 @@ Component({
         },
         regionValues: {
             type: Array,
-            default: ['', '', '']
+            default: [0, 0, 0]
         }
     },
 
@@ -63,47 +63,35 @@ Component({
             })
         },
         //计算省市区
-        computeArea(region, regionValues, regionValue) {
+        computeArea(region,regionValues,regionValue) {
             if (regionValues[0] != '') {
                 region.map((item, index) => {
                     if (regionValues[0] == item.name) {
+                        console.log(index)
                         regionValue[0] = index
-                        regionValue = regionValue
                     }
                     item.data.map((items, indexs) => {
                         if (regionValues[1] == items.name) {
+                            console.log(indexs)
                             regionValue[1] = indexs
-                            regionValue = regionValue
                         }
                         items.data.map((itemc, indexc) => {
-                            if (regionValues[2] == items.data[indexc].name) {
-                                console.log(regionValues,itemc)
-                                if(regionValue[0] == 0 && itemc.name == '东城区'){
-                                    regionValue[2] = 0
-                                }
-                                else if(regionValue[0] == 0 && itemc.name == '西城区'){
-                                    regionValue[2] = 1
-                                }
-                                else{
-                                    regionValue[2] = indexc
-                                }
-                                
-                                regionValue = regionValue
-
+                            if (regionValues[2] == itemc.name) {
+                                console.log(indexc)
+                                regionValue[2] = indexc
                             }
                         })
                     })
-                    
                 })
                 console.log(regionValue)
-                this.setData({
-                    regionValue: regionValue,
-
-                }, () => {
                     this.setData({
-                        regionValue: regionValue
+                        regionValue: regionValue,
+                        
+                    },()=>{
+                        this.setData({
+                            regionValue: regionValue
+                        })
                     })
-                })
             }
         },
         //取消
@@ -136,12 +124,12 @@ Component({
                 this.setData({
                     region: app.globalData.region
                 })
-                this.computeArea(app.globalData.region, this.properties.regionValues, this.data.regionValue)
+                this.computeArea(app.globalData.region,this.properties.regionValues,this.data.regionValue)
             } else {
                 this.setData({
                     region: app.globalData.region
                 })
-
+                
             }
         }, 509)
 
